@@ -24,5 +24,5 @@ app.get('/', (req, res) => {
 
 // 設定 port 3000
 app.listen(3000, () => {
-  console.log('喔耶~連線成功!')
+  console.log('喔耶~網站連線成功!')
 })
