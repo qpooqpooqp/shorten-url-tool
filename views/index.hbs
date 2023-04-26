@@ -1,1 +1,21 @@
-<h2>測試測試，看看是否渲染成功</h2>
+<img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" class="img-fluid"
+  alt="縮網址圖片">
+<form action="/url" method="POST">
+  <h4 class="mb-2">網址：<span class="text-danger">*</span></h4>
+  <div class="input-group mb-5">
+    <input type="url" name="originUrl" id="originUrl" class="form-control" placeholder="https://給我你的長長的那一串網址" aria-label="originUrl..."
+      value="" required/>
+    <div class="input-group-append">
+      <button class="btn btn-success" type="submit" id="search-button" onclick="check()">縮短</button>
+      <button type="reset" class="btn btn-danger">重新輸入</button>
+    </div>
+  </div>
+</form>
+<script>
+  function check() {
+    const inputText = document.getElementById('originUrl')
+    if (!inputText.value) {
+      alert('大大你別鬧，會被你玩壞掉，請輸入你長長的網址給人家...')
+    }
+  }
+</script>

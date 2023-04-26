@@ -1,0 +1,22 @@
+<img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png" class="img-fluid"
+  alt="縮網址圖片">
+
+<h4 class="mb-2">哈哈哈~你變得超短!!!</h4>
+<div class="input-group mb-5" id="output">
+  
+  <a href="{{originUrl}}" style="text-decoration:none">http://localhost:3000/url/{{shortenCode}}</a></div>
+  <button class="btn btn-primary" type="submit" id="copy-button">複製拿去用</button>
+    
+  
+
+<script>
+  let copyBtn = document.getElementById('copy-button')
+  copyBtn.addEventListener('click', output => {
+
+      const text = document.getElementById('output').innerText
+
+      navigator.clipboard.writeText(text)
+      
+      alert("全部都給你啦");
+    })
+</script>

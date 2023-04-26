@@ -1,29 +1,20 @@
 // 載入 express 並建構應用程式伺服器
 const express = require('express')
-const mongoose = require('mongoose') // 載入 mongoose
 const exphbs = require('express-handlebars');
+const bodyParser = require('body-parser')
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-
+const routes = require('./routes')
+require('./config/mongoose')
 const app = express()
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }) // 設定連線到 mongoDB
-const db = mongoose.connection
-// 連線異常
-db.on('error', () => {
-  console.log('喔幹，資料庫連線失敗...')
-})
-// 連線成功
-db.once('open', () => {
-  console.log('喔耶~資料庫連線成功!')
-})
 // 設定首頁路由
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
-app.get('/', (req, res) => {
-  res.render('index')
-})
+app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(routes)
 
 // 設定 port 3000
 app.listen(3000, () => {
