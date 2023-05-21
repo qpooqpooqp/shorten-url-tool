@@ -8,4 +8,4 @@ const sortenUrls = require('./modules/sortenUrls')
 router.use('/', home)
 router.use('/url', sortenUrls)
 
-module.exports = router
+module.exports = router 

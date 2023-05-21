@@ -25,9 +25,9 @@ router.post('', (req, res) => {
         res.render('result', { originUrl: urls.originUrl, shortenCode: urls.shortenCode })
       } else {
         res.render('result', { originUrl: newUrl, shortenCode: shortenCode },
-          console.log(shortenCode))
+          )
         return urlBase.create({ originUrl: newUrl, shortenCode: shortenCode },
-          console.log(shortenCode))
+          )
       }
     })
 })
